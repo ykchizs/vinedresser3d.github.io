@@ -297,9 +297,10 @@ function modelviewer_window_template(item1, item2, panel, config) {
     let viewer_size = config && config.viewer_size || 500;
     let panel_size = config && config.panel_size || 300;
     let show_annotations = config && config.show_annotations || false;
-    html = `<div class="x-row" style="align-items: stretch; flex-wrap: wrap; width: ${viewer_size + viewer_size + panel_size + 32}px; max-width: calc(100vw - 32px);">`
+    let html = '';
+    html += `<div class="x-row" style="align-items: stretch; flex-wrap: wrap; width: ${viewer_size + viewer_size + panel_size + 32}px; max-width: calc(100vw - 32px);">`
     
-    html += `<div class="x-row" style="width: ${viewer_size * 2}px; max-width: 100%;">
+    html += `
                 <div class="modelviewer-container" style="width: ${viewer_size}px;">
                     <model-viewer
                         id="modelviewer"
@@ -337,8 +338,7 @@ function modelviewer_window_template(item1, item2, panel, config) {
         }
     }
     html += `        </model-viewer>
-                </div>
-            </div>`;
+                </div>`;
 
     html += `   <div class="modelviewer-panel" style="flex: 1 1 ${panel_size}px;">
                     ${panel}
