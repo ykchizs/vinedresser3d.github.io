@@ -293,7 +293,7 @@ function scene_panel_template(item) {
 }
 
 
-function modelviewer_window_template(item, panel, config) {
+function modelviewer_window_template(item1, item2, panel, config) {
     let viewer_size = config && config.viewer_size || 500;
     let panel_size = config && config.panel_size || 300;
     let show_annotations = config && config.show_annotations || false;
@@ -301,23 +301,43 @@ function modelviewer_window_template(item, panel, config) {
                 <div class="modelviewer-container" style="width: ${viewer_size}px;">
                     <model-viewer
                         id="modelviewer"
-                        src="${item.model}"
+                        src="${item1.model}"
                         camera-controls
                         tone-mapping="natural"
                         shadow-intensity="1"
                         environment-image="assets/env_maps/white.jpg"
-                        exposure="${item.exposure || 5}"
+                        exposure="${item1.exposure || 5}"
                         >`
     if (show_annotations) {
-        window_state.assets = item.assets;
-        window_state.prompt_template = item.prompt_template;
-        for (let i = 0; i < item.assets.length; i++) {
-            html += `<button slot="hotspot-${i}" data-position="${item.assets[i].position.join(' ')}">${item.assets[i].name}</button>`;
+        window_state.assets = item1.assets;
+        window_state.prompt_template = item1.prompt_template;
+        for (let i = 0; i < item1.assets.length; i++) {
+            html += `<button slot="hotspot-${i}" data-position="${item1.assets[i].position.join(' ')}">${item1.assets[i].name}</button>`;
         }
     }
     html += `        </model-viewer>
-                </div>
-                <div class="modelviewer-panel" style="flex: 1 1 ${panel_size}px;">
+                </div>`
+    
+    html += `   <div class="modelviewer-container" style="width: ${viewer_size}px;">
+                    <model-viewer
+                        id="modelviewer"
+                        src="${item2.model}"
+                        camera-controls
+                        tone-mapping="natural"
+                        shadow-intensity="1"
+                        environment-image="assets/env_maps/white.jpg"
+                        exposure="${item2.exposure || 5}"
+                        >`
+    if (show_annotations) {
+        window_state.assets = item2.assets;
+        window_state.prompt_template = item1.prompt_template;
+        for (let i = 0; i < item2.assets.length; i++) {
+            html += `<button slot="hotspot-${i}" data-position="${item2.assets[i].position.join(' ')}">${item2.assets[i].name}</button>`;
+        }
+    }
+    html += `        </model-viewer>
+                </div>`
+    html += `   <div class="modelviewer-panel" style="flex: 1 1 ${panel_size}px;">
                     ${panel}
                 </div>
             </div>`;
