@@ -225,8 +225,8 @@ function backToScene() {
 }
 
 
-function downloadGLB() {
-    let modelViewer = document.getElementById('modelviewer');
+function downloadGLB(number) {
+    let modelViewer = document.getElementById(`modelviewer${number}`);
     window.open(modelViewer.src);
 }
 
@@ -237,14 +237,10 @@ function asset_panel_template(prompt) {
         <div class="modelviewer-panel-prompt">
             ${prompt}
         </div>
-        <div class="x-section-title small"><div class="x-gradient-font">Display Mode</div></div>
-        <div class="x-left-align">
-            <div id="appearance-button" class="modelviewer-panel-button small checked" onclick="showTexture()">Appearance</div>
-            <div id="geometry-button" class="modelviewer-panel-button small" onclick="hideTexture()">Geometry</div>
-        </div>
         <div class="x-flex-spacer"></div>
         <div class="x-row">
-            <div id="download-button" class="modelviewer-panel-button enabled" onclick="downloadGLB()">Download GLB</div>
+            <div id="download-button1" class="modelviewer-panel-button enabled" onclick="downloadGLB(1)">Download GLB</div>
+            <div id="download-button2" class="modelviewer-panel-button enabled" onclick="downloadGLB(2)">Download GLB</div>
         </div>
     `;
 }
@@ -303,7 +299,7 @@ function modelviewer_window_template(item1, item2, panel, config) {
     html += `
                 <div class="modelviewer-container" style="width: ${viewer_size}px;">
                     <model-viewer
-                        id="modelviewer"
+                        id="modelviewer1"
                         src="${item1.model}"
                         camera-controls
                         tone-mapping="natural"
@@ -322,7 +318,7 @@ function modelviewer_window_template(item1, item2, panel, config) {
                 </div>
                 <div class="modelviewer-container" style="width: ${viewer_size}px;">
                     <model-viewer
-                        id="modelviewer"
+                        id="modelviewer2"
                         src="${item2.model}"
                         camera-controls
                         tone-mapping="natural"
