@@ -1,50 +1,153 @@
-
-<!-- saved from url=(0067)https://vinedresser3d.w3spaces.com/saved-from-Tryit-2025-11-28.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vinedresser3D</title>
-        <link rel="icon" href="https://vinedresser3d.w3spaces.com/favicon.png">
-        <link rel="stylesheet" href="./index_files/stylesheet.css">
-        <link rel="stylesheet" href="./index_files/stylesheet(1).css">
-        <link rel="stylesheet" href="./index_files/style.css">
-        <link rel="stylesheet" href="./index_files/window.css">
-        <link rel="stylesheet" href="./index_files/carousel.css">
-        <link rel="stylesheet" href="./index_files/selection_panel.css">
-        <link rel="stylesheet" href="./index_files/main.css">
-        <script src="./index_files/window.js.下载"></script>
-        <script src="./index_files/carousel.js.下载"></script>
-        <script src="./index_files/selection_panel.js.下载"></script>
-        <script src="./index_files/generation.js.下载"></script>
-        <script src="./index_files/editing.js.下载"></script>
-        <script src="./index_files/application.js.下载"></script>
-		<script src="./index_files/main.js.下载"></script>
-        <script type="module" src="./index_files/model-viewer.min.js.下载"></script>
-    </head>
-    <body>
-        <div id="main">
-            <div id="title" class="x-gradient-font">
-                <span style="font-size: 40px;">Vinedresser3D: Towards Agentic Text-guided 3D Editing</span><br>
-            </div>
-            <div id="authors">
-                <div>Yankuan Chi*<sup>1</sup></div>
-                <div>Xiang Li*<sup>2</sup></div>
-                <div>Zixuan Huang<sup>2</sup></div>
-                <div>James Matthew Rehg<sup>2</sup></div>
-            </div>
-            <div id="institution">
-                <div><sup>1</sup>The Hong Kong University of Science and Technology</div>
-                <div><sup>2</sup>University of Illinois Urbana-Champaign</div>
-            </div>
-            <!--<div id="links">
-                <div><a id="paper" href="https://arxiv.org/abs/2412.01506">Arxiv</a></div>
-                <div><a id="code" href="https://github.com/Microsoft/TRELLIS">Code</a></div>
-            </div>-->
-            <div id="abstract" class="x-gradient-block">
-                Text-guided 3D editing aims to modify existing 3D assets using natural-language instructions. Current methods struggle to jointly understand complex prompts, automatically localize edits in 3D, and preserve unedited content. We introduce Vinedresser3D, an agentic framework for high-quality text-guided 3D editing that operates directly in the latent space of a native 3D generative model. Given a 3D asset and an editing prompt, Vinedresser3D uses a multimodal large language model to infer rich descriptions of the original asset, identify the parts to edit and the edit type (addition, modification, deletion), and generate decomposed structural and appearance-level text guidance. The agent then selects an informative view and applies an image editing model to obtain visual guidance. Finally, an inversion-based rectified-flow inpainting pipeline with an interleaved sampling module performs editing in the 3D latent space, enforcing prompt alignment while maintaining 3D coherence and unedited regions. Experiments on diverse 3D edits demonstrate that Vinedresser3D outperforms prior baselines in both automatic metrics and human preference studies, while enabling precise, coherent, and mask-free 3D editing.
-            </div>
+            <html lang="en">
+                <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Vinedresser3D</title>
+                    <link rel="icon" href="favicon.png">
+                    <link rel="stylesheet" href="fonts/avenir-next/stylesheet.css">
+                    <link rel="stylesheet" href="fonts/segoe-print/stylesheet.css">
+                    <link rel="stylesheet" href="icons/style.css">
+                    <link rel="stylesheet" href="css/window.css">
+                    <link rel="stylesheet" href="css/carousel.css">
+                    <link rel="stylesheet" href="css/selection_panel.css">
+                    <link rel="stylesheet" href="css/main.css">
+                    <script src="js/window.js"></script>
+                    <script src="js/carousel.js"></script>
+                    <script src="js/selection_panel.js"></script>
+                    <script src="js/generation.js"></script>
+                    <script src="js/editing.js"></script>
+                    <script src="js/application.js"></script>
+                    <script src="js/main.js"></script>
+                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                </head>
+                <body>
+                    <div id="main">
+                        <div id="title" class="x-gradient-font">
+                            <span style="font-size: 40px;">Vinedresser3D: Towards Agentic Text-guided 3D Editing</span><br>
+                        </div>
+                        <div id="claim">
+                            <span style="font-size: 40px;">Under reconstruction</span>
+                        </div>
+                        <div id="authors">
+                            <div>Yankuan Chi*<sup>1</sup></div>
+                            <div>Xiang Li*<sup>2</sup></div>
+                            <div>Zixuan Huang<sup>2</sup></div>
+                            <div>James Matthew Rehg<sup>2</sup></div>
+                        </div>
+                        <div id="institution">
+                            <div><sup>1</sup>The Hong Kong University of Science and Technology</div>
+                            <div><sup>2</sup>University of Illinois Urbana-Champaign</div>
+                        </div>
+                        <!--<div id="links">
+                            <div><a id="paper" href="https://arxiv.org/abs/2412.01506">Arxiv</a></div>
+                            <div><a id="code" href="https://github.com/Microsoft/TRELLIS">Code</a></div>
+                        </div>-->
+                        <div id="abstract" class="x-gradient-block">
+                            Text-guided 3D editing aims to modify existing 3D assets using natural-language instructions. Current methods struggle to jointly understand complex prompts, automatically localize edits in 3D, and preserve unedited content. We introduce Vinedresser3D, an agentic framework for high-quality text-guided 3D editing that operates directly in the latent space of a native 3D generative model. Given a 3D asset and an editing prompt, Vinedresser3D uses a multimodal large language model to infer rich descriptions of the original asset, identify the parts to edit and the edit type (addition, modification, deletion), and generate decomposed structural and appearance-level text guidance. The agent then selects an informative view and applies an image editing model to obtain visual guidance. Finally, an inversion-based rectified-flow inpainting pipeline with an interleaved sampling module performs editing in the 3D latent space, enforcing prompt alignment while maintaining 3D coherence and unedited regions. Experiments on diverse 3D edits demonstrate that Vinedresser3D outperforms prior baselines in both automatic metrics and human preference studies, while enabling precise, coherent, and mask-free 3D editing.
+                        </div>
+                        <p class="x-note">
+                            <i>* Generated by</i> <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>, <i>using its</i> <span style="font-size: 16px; font-weight: 600;">image to 3D assets</span> <i>cabilities.</i>
+                        </p>
+                        <p class="x-note">
+                            <i>The appearance and geometry shown in this page are rendered from 3D Gaussians and meshes, respectively.
+                            GLB files are extracted by baking appearance from 3D Gaussians to meshes.</i>
+                        </p>
             
-
-            <div class="x-section-title"><div class="x-gradient-font">Generation <span style="font-size: 40px; font-weight:600;">|</span> Text to 3D Asset</div></div>
-            <p>All text prompts are generated by GPT-4. Click on the cards to view extracted GLB files.</p>
-            <div id="results-txt2"></div></div></body></html>
+                        <div class="x-section-title"><div class="x-gradient-font">Generation <span style="font-size: 40px; font-weight:600;">|</span> Text to 3D Asset</div></div>
+                        <p>All text prompts are generated by GPT-4. Click on the cards to view extracted GLB files.</p>
+                        <div id="results-txt2"></div>
+            
+                        <div class="x-section-title"><div class="x-gradient-font">Generation <span style="font-size: 40px; font-weight:600;">|</span> Image to 3D Asset</div></div>
+                        <p>Image prompts are generated by DALL-E 3. Click on the cards to view extracted GLB files.</p>
+                        <div id="results-img2"></div>
+            
+                        <div class="x-section-title"><div class="x-gradient-font">Editing <span style="font-size: 40px; font-weight:600;">|</span> Asset Variants</div></div>
+                        <p>
+                            <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>
+                            can generates variants of a given 3D asset coherent with given text prompts.
+                        </p>
+                        <div id="results-variants"></div>
+            
+                        <div class="x-section-title"><div class="x-gradient-font">Editing <span style="font-size: 40px; font-weight:600;">|</span> Local Manipulation</div></div>
+                        <p>
+                            <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>
+                            can manipulate targeted local regions of a given 3D asset according to given text or image prompts.
+                        </p>
+                        <div id="results-manipulation"></div>
+            
+                        <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> 3D Art Designs</div></div>
+                        <p>
+                            Compositing the high-quality 3D assets generated by <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>,
+                            complex and vibrant 3D art designs can be created with ease.
+                        </p>
+                        <div id="results-scene"></div>
+            
+                        <div class="x-section-title"><div class="x-gradient-font">Methodology</div></div>
+                        <p>
+                            <img src="assets/pipeline.png" alt="Pipeline of the method" style="width: 100%;">
+                        </p>
+                        <p>
+                            We introduce Structured LATents (<span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>),
+                            a unified 3D latent representation for high-quality, versatile 3D generation. <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>
+                            marries sparse structures with powerful visual representations. It defines local latents on active voxels intersecting the object's surface.
+                            The local latents are encoded by fusing and processing image features from densely rendered views of the 3D asset, while attaches them onto active voxels.
+                            These features, derived from powerful pretrained vision encoders, capture detailed geometric and visual characteristics, complementing the coarse structure provided by the active voxels.
+                            Different decoders can then be applied to map <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span> to diverse 3D representations of high quality.
+                        </p>
+                        <p>
+                            Building on <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>, we train a family of large 3D generation models, dubbed <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>, with text prompts or images as conditions.
+                            A two stage pipeline is applied which first generates the sparse structure of <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>, followed by generating the latent vectors for non-empty cells.
+                            We employ rectified flow transformers as our backbone models and adapt them properly to handle the sparsity in <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>.
+                            We train Trellis with up to 2 billion parameters on a large dataset of carefully-collected 3D assets.
+                            <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span> can create high-quality 3D assets with detailed geometry and vivid texture, significantly surpassing previous methods.
+                            Moreover, it can easily generate 3D assets with different output formats to meet diverse downstream requirements.
+                        </p>
+            
+                        <div class="x-section-title"><div class="x-gradient-font">Citation</div></div>
+                        <p>
+                            If you find our work useful, please consider citing:
+                        </p>
+                        <p class="bibtex x-gradient-block">
+            @article{xiang2024structured,
+                title   = {Structured 3D Latents for Scalable and Versatile 3D Generation},
+                author  = {Xiang, Jianfeng and Lv, Zelong and Xu, Sicheng and Deng, Yu and Wang, Ruicheng and 
+                           Zhang, Bowen and Chen, Dong and Tong, Xin and Yang, Jiaolong},
+                journal = {arXiv preprint arXiv:2412.01506},
+                year    = {2024}
+            }
+                        </p>
+                        <div style="height: 100px;"> </div>
+                        <p class="x-note">
+                            <b style="line-height: 32px;">Responsible AI Considerations</b><br>
+                            <i>
+                                TRELLIS is purely a research project. Responsible AI considerations were factored into all stages. The datasets used in this paper are public and have been reviewed to ensure there is no personally identifiable information or harmful content. However, as these datasets are sourced from the Internet, potential bias may still be present. Currently the model excels at generating artistic-style 3D assets and its capability in generating photorealistic real-world objects is limited.
+                            </i>
+                        </p>
+                        <p class="x-note">
+                            <b style="line-height: 32px;">Material Disclaimer</b><br>
+                            <i>
+                            The materials made available on this page are provided solely for academic and research purposes in connection with the exploration of text-to-3D and image-to-3D generation technologies, as described in the publication accessible at https://arxiv.org/abs/2412.01506. These materials are not intended for commercial exploitation or use.
+            If you believe that any content on this page infringes upon your intellectual property rights, including but not limited to copyright, please notify us by submitting a takedown request via email to jiaoyan (at) microsoft.com.
+                            </i>
+                        </p>
+                    </div>
+                    <div id="bottombar">
+                        <div class="row">
+                            <div><span>T<span style="font-size: 10px;">RELLIS</span>:</span> Structured 3D Latents for Scalable and Versatile 3D Generation</div>
+                            <div style="display: flex; flex-direction: row; gap: 8px;">
+                                <a href="https://github.com/microsoft/TRELLIS/issues">Contact Us on GitHub</a>
+                                <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
+                                <a href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy & Cookies</a>
+                                <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
+                                <a href="https://go.microsoft.com/fwlink/?linkid=2259814">Consumer Health Privacy</a>
+                                <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
+                                <a href="https://go.microsoft.com/fwlink/?LinkID=246338">Terms of Use</a>
+                                <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
+                                <a href="https://go.microsoft.com/fwlink/?linkid=2196228">Trademarks</a>
+                                <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
+                                <span>© 2025 Microsoft</span>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+            </html>
