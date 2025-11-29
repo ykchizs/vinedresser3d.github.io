@@ -105,7 +105,7 @@ function img2_carousel_item_template(item) {
 
 
 function txt2_window_template(item) {
-    let prompt = `<div class="x-image-prompt"><img src="assets/img2/images/${item.prompt}" alt="${item.alt}"></div>`;
+    let prompt = `<div class="x-handwriting">${item.prompt}</div>`;
     let panel = asset_panel_template(prompt);
     let item1 = JSON.parse(JSON.stringify(item));
     let item2 = JSON.parse(JSON.stringify(item));
