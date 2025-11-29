@@ -299,7 +299,8 @@ function modelviewer_window_template(item1, item2, panel, config) {
     let show_annotations = config && config.show_annotations || false;
     html = `<div class="x-row" style="align-items: stretch; flex-wrap: wrap; width: ${viewer_size + viewer_size + panel_size + 32}px; max-width: calc(100vw - 32px);">`
     
-    html += `    <div class="modelviewer-container" style="width: ${viewer_size}px;">
+    html += `<div class="x-row" style="width: ${viewer_size * 2}px; max-width: 100%;">
+                <div class="modelviewer-container" style="width: ${viewer_size}px;">
                     <model-viewer
                         id="modelviewer"
                         src="${item1.model}"
@@ -308,7 +309,7 @@ function modelviewer_window_template(item1, item2, panel, config) {
                         shadow-intensity="1"
                         environment-image="assets/env_maps/white.jpg"
                         exposure="${item1.exposure || 5}"
-                        >`
+                    >`
     if (show_annotations) {
         window_state.assets = item1.assets;
         window_state.prompt_template = item1.prompt_template;
@@ -317,9 +318,8 @@ function modelviewer_window_template(item1, item2, panel, config) {
         }
     }
     html += `        </model-viewer>
-                </div>`
-    
-    html += `   <div class="modelviewer-container" style="flex: 1 1 ${viewer_size}px;">
+                </div>
+                <div class="modelviewer-container" style="width: ${viewer_size}px;">
                     <model-viewer
                         id="modelviewer"
                         src="${item2.model}"
@@ -328,7 +328,7 @@ function modelviewer_window_template(item1, item2, panel, config) {
                         shadow-intensity="1"
                         environment-image="assets/env_maps/white.jpg"
                         exposure="${item2.exposure || 5}"
-                        >`
+                    >`
     if (show_annotations) {
         window_state.assets = item2.assets;
         window_state.prompt_template = item1.prompt_template;
@@ -337,7 +337,8 @@ function modelviewer_window_template(item1, item2, panel, config) {
         }
     }
     html += `        </model-viewer>
-                </div>`
+                </div>
+            </div>`;
 
     html += `   <div class="modelviewer-panel" style="flex: 1 1 ${panel_size}px;">
                     ${panel}
