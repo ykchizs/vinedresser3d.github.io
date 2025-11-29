@@ -76,11 +76,13 @@ function txt2_carousel_item_template(item) {
                 <div class="x-labels">
                     <div class="x-label">GLB ✓</div>
                 </div>
-                <div style="width: 100%; aspect-ratio: 1">
-                    <video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>
-                </div>
-                <div style="width: 100%; aspect-ratio: 1">
-                    <video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>
+                <div style="display: flex; gap: 6px; width: 100%; aspect-ratio: 2;">
+                    <div style="flex: 1 1 0; aspect-ratio: 1;">
+                        <video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>
+                    </div>
+                    <div style="flex: 1 1 0; aspect-ratio: 1;">
+                        <video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>
+                    </div>
                 </div>
                 <div class="caption">
                     <div class="x-handwriting">
@@ -108,27 +110,26 @@ function img2_carousel_item_template(item) {
 
 
 function txt2_window_template(item) {
-    let prompt = `<div class="x-handwriting">${item.prompt}</div>`;
-    let panel = asset_panel_template(prompt);
     // Deep copy to avoid mutating original object
     let item1 = JSON.parse(JSON.stringify(item));
     let item2 = JSON.parse(JSON.stringify(item));
     item1.model = 'assets/txt2/glbs/' + item1.model;
     item2.model = 'assets/txt2/glbs/' + item2.model;
 
-    // Display two GLB windows side by side
-    // Wrap them inside a container div
-    let windows = `
+    // No prompt, just glb1+glb2+panel
+    return `
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
             <div style="flex: 1 1 0;">
-                ${modelviewer_window_template(item1, panel)}
+                ${modelviewer_window_template(item1, '')}
             </div>
             <div style="flex: 1 1 0;">
-                ${modelviewer_window_template(item2, panel)}
+                ${modelviewer_window_template(item2, '')}
+            </div>
+            <div style="flex-basis: 100%; margin-top: 16px;">
+                ${asset_panel_template('')}
             </div>
         </div>
     `;
-    return windows;
 }
 
 
