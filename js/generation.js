@@ -79,6 +79,9 @@ function txt2_carousel_item_template(item) {
                 <div style="width: 100%; aspect-ratio: 1">
                     <video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>
                 </div>
+                <div style="width: 100%; aspect-ratio: 1">
+                    <video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>
+                </div>
                 <div class="caption">
                     <div class="x-handwriting">
                         ${item.prompt}
@@ -107,9 +110,25 @@ function img2_carousel_item_template(item) {
 function txt2_window_template(item) {
     let prompt = `<div class="x-handwriting">${item.prompt}</div>`;
     let panel = asset_panel_template(prompt);
-    item = JSON.parse(JSON.stringify(item));
-    item.model = 'assets/txt2/glbs/' + item.model
-    return modelviewer_window_template(item, panel);
+    // Deep copy to avoid mutating original object
+    let item1 = JSON.parse(JSON.stringify(item));
+    let item2 = JSON.parse(JSON.stringify(item));
+    item1.model = 'assets/txt2/glbs/' + item1.model;
+    item2.model = 'assets/txt2/glbs/' + item2.model;
+
+    // Display two GLB windows side by side
+    // Wrap them inside a container div
+    let windows = `
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <div style="flex: 1 1 0;">
+                ${modelviewer_window_template(item1, panel)}
+            </div>
+            <div style="flex: 1 1 0;">
+                ${modelviewer_window_template(item2, panel)}
+            </div>
+        </div>
+    `;
+    return windows;
 }
 
 
