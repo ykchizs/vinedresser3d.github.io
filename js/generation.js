@@ -77,7 +77,8 @@ function txt2_carousel_item_template(item) {
                     <div class="x-label">GLB ✓</div>
                 </div>
                 <div style="width: 100%; aspect-ratio: 1">
-                    <video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>
+                    <!--<video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>-->
+                    <video autoplay playsinline loop muted height="100%" src="assets/results/ancientFighter.mp4"></video>
                 </div>
                 <div class="caption">
                     <div class="x-handwriting">
