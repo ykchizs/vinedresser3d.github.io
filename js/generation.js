@@ -72,10 +72,7 @@ var img2_items = [
 
 
 function txt2_carousel_item_template(item) {
-    return `<div class="x-card clickable" style="min-width: 120px" onclick=\'openWindow(txt2_window_template(${JSON.stringify(item)}))\'>
-                <div class="x-labels">
-                    <div class="x-label">GLB ✓</div>
-                </div>
+    return `<div class="x-card clickable" style="min-width: 240px" onclick=\'openWindow(txt2_window_template(${JSON.stringify(item)}))\'>
                 <div style="width: 100%; aspect-ratio: 1">
                     <!--<video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>-->
                     <video autoplay playsinline loop muted height="100%" src="assets/results/ancientFighter.mp4"></video>
