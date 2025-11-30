@@ -239,8 +239,8 @@ function asset_panel_template(prompt) {
         </div>
         <div class="x-flex-spacer"></div>
         <div class="x-row">
-            <div id="download-button1" class="modelviewer-panel-button enabled" onclick="downloadGLB(1)">Download original GLB</div>
-            <div id="download-button2" class="modelviewer-panel-button enabled" onclick="downloadGLB(2)">Download edited GLB</div>
+            <div id="download-button1" class="modelviewer-panel-button enabled" onclick="downloadGLB(1)">Original GLB</div>
+            <div id="download-button2" class="modelviewer-panel-button enabled" onclick="downloadGLB(2)">Edited GLB</div>
         </div>
     `;
 }
