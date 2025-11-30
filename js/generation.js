@@ -90,7 +90,8 @@ function img2_carousel_item_template(item) {
                 </div>
                 <div style="width: 100%; aspect-ratio: 1">
                     <video autoplay playsinline loop muted height="100%" src="assets/img2/videos/${item.video}"></video>
-                </div><div class="caption">
+                </div>
+                <div class="caption">
                     <div class="x-image-prompt">
                         <img src="assets/img2/images/${item.prompt}" alt="${item.alt}">
                     </div>
