@@ -72,8 +72,13 @@ var img2_items = [
 
 function txt2_carousel_item_template(item) {
     return `<div class="x-card clickable" style="min-width: 120px" onclick=\'openWindow(txt2_window_template(${JSON.stringify(item)}))\'>
-                <div style="width: 100%; aspect-ratio: 1">
-                    <video autoplay playsinline loop muted height="100%" src="assets/results/ancientFighter.mp4"></video>
+                <div style="display: flex; flex-direction: row; gap: 4px; width: 100%;">
+                    <div style="flex: 1 1 0; aspect-ratio: 1;">
+                        <video autoplay playsinline loop muted height="100%" style="width: 100%; height: 100%; object-fit: cover;" src="/u/xiangl12/project/yankuan/TRELLIS/outputs/website/ancientFighter_ori.mp4"></video>
+                    </div>
+                    <div style="flex: 1 1 0; aspect-ratio: 1;">
+                        <video autoplay playsinline loop muted height="100%" style="width: 100%; height: 100%; object-fit: cover;" src="/u/xiangl12/project/yankuan/TRELLIS/outputs/website/ancientFighter_edit.mp4"></video>
+                    </div>
                 </div>
                 <div class="caption">
                     <div class="x-handwriting">
