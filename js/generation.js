@@ -77,8 +77,8 @@ function txt2_carousel_item_template(item) {
                     <!--<video autoplay playsinline loop muted height="100%" src="assets/txt2/videos/${item.video}"></video>-->
                     <video autoplay playsinline loop muted height="100%" src="assets/results/ancientFighter.mp4"></video>
                 </div>
-                <div class="caption" style="margin-top:0;">
-                    <div class="x-handwriting">
+                <div class="caption" style="margin-top:0; display: flex; flex-direction: row; align-items: center;">
+                    <div class="x-handwriting" style="margin-left: 8px;">
                         ${item.prompt}
                     </div>
                 </div>
