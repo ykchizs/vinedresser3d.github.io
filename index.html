@@ -25,9 +25,6 @@
                         <div id="title" class="x-gradient-font">
                             <span style="font-size: 40px;">Vinedresser3D: Towards Agentic Text-guided 3D Editing</span><br>
                         </div>
-                        <div id="claim">
-                            <span style="font-size: 40px;">Under reconstruction</span>
-                        </div>
                         <div id="authors">
                             <div>Yankuan Chi*<sup>1</sup></div>
                             <div>Xiang Li*<sup>2</sup></div>
@@ -40,7 +37,7 @@
                         </div>
                         <div id="links">
                             <div><a id="paper" href="https://ykchizs.github.io/vinedresser3d.github.io/">Paper</a></div>
-                            <div><a id="code" href="https://ykchizs.github.io/vinedresser3d.github.io/">Code</a></div>
+                            <div><a id="code" href="https://github.com/ykchizs/Vinedresser3D">Code</a></div>
                         </div>
                         <div id="abstract" class="x-gradient-block">
                             Text-guided 3D editing aims to modify existing 3D assets using natural-language instructions. Current methods struggle to jointly understand complex prompts, automatically localize edits in 3D, and preserve unedited content. We introduce Vinedresser3D, an agentic framework for high-quality text-guided 3D editing that operates directly in the latent space of a native 3D generative model. Given a 3D asset and an editing prompt, Vinedresser3D uses a multimodal large language model to infer rich descriptions of the original asset, identify the parts to edit and the edit type (addition, modification, deletion), and generate decomposed structural and appearance-level text guidance. The agent then selects an informative view and applies an image editing model to obtain visual guidance. Finally, an inversion-based rectified-flow inpainting pipeline with an interleaved sampling module performs editing in the 3D latent space, enforcing prompt alignment while maintaining 3D coherence and unedited regions. Experiments on diverse 3D edits demonstrate that Vinedresser3D outperforms prior baselines in both automatic metrics and human preference studies, while enabling precise, coherent, and mask-free 3D editing.
@@ -51,7 +48,7 @@
             
                         <div class="x-section-title"><div class="x-gradient-font">Methodology</div></div>
                         <p>
-                            <img src="assets/fig_pipeline.pdf" alt="Pipeline of the method" style="width: 100%;">
+                            <img src="assets/fig_pipeline.png" alt="Pipeline of the method" style="width: 100%;">
                         </p>
                         <p>
                             Given the original 3D asset and an editing prompt as input, Vinedresser3D employs a multimodal large language model (MLLM) as its core to generate new textual and visual guidance. Additionally, a segmentation model is used to segment the original asset and the MLLM then identifies the intended editing region. Subsequently, Vinedresser3D performs 3D editing using an inversion-based Trellis module, leveraging the provided guidance and identified editing region to produce the final edited asset.
