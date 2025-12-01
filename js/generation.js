@@ -1,19 +1,19 @@
 
 var items = [
     { video_ori: "ancientFighter_ori.mp4", video_edit: "ancientFighter_edit.mp4", prompt: "Change the sword to an axe.", glb_ori: "ancientFighter_ori.glb", glb_edit: "ancientFighter_edit.glb", exposure: 5},
-    { video_ori: "BATHROOM_CLASSIC_ori.mp4", video_edit: "BATHROOM_CLASSIC_edit.mp4", prompt: "Change the bathtub to a bucket.", glb_ori: "BATHROOM_CLASSIC_ori.glb", glb_edit: "BATHROOM_CLASSIC_edit.glb", exposure: 5},
-    { video_ori: "CAR_CARRIER_TRAIN_ori.mp4", video_edit: "CAR_CARRIER_TRAIN_edit.mp4", prompt: "Change the toy car to a train.", glb_ori: "CAR_CARRIER_TRAIN_ori.glb", glb_edit: "CAR_CARRIER_TRAIN_edit.glb", exposure: 5},
+    { video_ori: "BATHROOM_CLASSIC_ori.mp4", video_edit: "BATHROOM_CLASSIC_edit.mp4", prompt: "Change the bathtub to a bucket.", glb_ori: "BATHROOM_CLASSIC_ori.glb", glb_edit: "BATHROOM_CLASSIC_edit.glb", exposure: 2},
+    { video_ori: "CAR_CARRIER_TRAIN_ori.mp4", video_edit: "CAR_CARRIER_TRAIN_edit.mp4", prompt: "Change the car on the back to a pumpkin.", glb_ori: "CAR_CARRIER_TRAIN_ori.glb", glb_edit: "CAR_CARRIER_TRAIN_edit.glb", exposure: 3},
     { video_ori: "castle_ori.mp4", video_edit: "castle_edit.mp4", prompt: "Change the tallest castle in the middle to a skyscraper.", glb_ori: "castle_ori.glb", glb_edit: "castle_edit.glb", exposure: 5},
     { video_ori: "elephant_ori.mp4", video_edit: "elephant_edit.mp4", prompt: "Change the chair to a human riding the elephant.", glb_ori: "elephant_ori.glb", glb_edit: "elephant_edit.glb", exposure: 5},
     { video_ori: "excavator_ori.mp4", video_edit: "excavator_edit.mp4", prompt: "Change the excavator's bucket to a drill.", glb_ori: "excavator_ori.glb", glb_edit: "excavator_edit.glb", exposure: 5},
     { video_ori: "foodCartTwo_ori.mp4", video_edit: "foodCartTwo_edit.mp4", prompt: "Add a billboard on the cart.", glb_ori: "foodCartTwo_ori.glb", glb_edit: "foodCartTwo_edit.glb", exposure: 5},
     { video_ori: "horseCart_ori.mp4", video_edit: "horseCart_edit.mp4", prompt: "Remove the roof of the horse cart.", glb_ori: "horseCart_ori.glb", glb_edit: "horseCart_edit.glb", exposure: 5},
-    { video_ori: "KITCHEN_FURNITURE_SET_ori.mp4", video_edit: "KITCHEN_FURNITURE_SET_edit.mp4", prompt: "Change the kitchen furniture to a kitchen sink.", glb_ori: "KITCHEN_FURNITURE_SET_ori.glb", glb_edit: "KITCHEN_FURNITURE_SET_edit.glb", exposure: 5},
-    { video_ori: "PartObjaverseTiny_Eight_ori.mp4", video_edit: "PartObjaverseTiny_Eight_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "PartObjaverseTiny_Eight_ori.glb", glb_edit: "PartObjaverseTiny_Eight_edit.glb", exposure: 5},
-    { video_ori: "PartObjaverseTiny_Five_ori.mp4", video_edit: "PartObjaverseTiny_Five_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "PartObjaverseTiny_Five_ori.glb", glb_edit: "PartObjaverseTiny_Five_edit.glb", exposure: 5},
-    { video_ori: "PartObjaverseTiny_Seventeen_ori.mp4", video_edit: "PartObjaverseTiny_Seventeen_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "PartObjaverseTiny_Seventeen_ori.glb", glb_edit: "PartObjaverseTiny_Seventeen_edit.glb", exposure: 5},
-    { video_ori: "RJ_Rabbit_Easter_Basket_Blue_ori.mp4", video_edit: "RJ_Rabbit_Easter_Basket_Blue_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "RJ_Rabbit_Easter_Basket_Blue_ori.glb", glb_edit: "RJ_Rabbit_Easter_Basket_Blue_edit.glb", exposure: 5},
-    { video_ori: "Sonny_School_Bus_ori.mp4", video_edit: "Sonny_School_Bus_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "Sonny_School_Bus_ori.glb", glb_edit: "Sonny_School_Bus_edit.glb", exposure: 5},
+    { video_ori: "KITCHEN_FURNITURE_SET_ori.mp4", video_edit: "KITCHEN_FURNITURE_SET_edit.mp4", prompt: "Add a microwave oven over the cabinet.", glb_ori: "KITCHEN_FURNITURE_SET_ori.glb", glb_edit: "KITCHEN_FURNITURE_SET_edit.glb", exposure: 2},
+    { video_ori: "PartObjaverseTiny_Eight_ori.mp4", video_edit: "PartObjaverseTiny_Eight_edit.mp4", prompt: "Change the normal peashooter to a snow peashooter.", glb_ori: "PartObjaverseTiny_Eight_ori.glb", glb_edit: "PartObjaverseTiny_Eight_edit.glb", exposure: 2},
+    { video_ori: "PartObjaverseTiny_Five_ori.mp4", video_edit: "PartObjaverseTiny_Five_edit.mp4", prompt: "Change the purple flower to a white dandelion.", glb_ori: "PartObjaverseTiny_Five_ori.glb", glb_edit: "PartObjaverseTiny_Five_edit.glb", exposure: 2},
+    { video_ori: "PartObjaverseTiny_Seventeen_ori.mp4", video_edit: "PartObjaverseTiny_Seventeen_edit.mp4", prompt: "Change the sunshade on the left to a water fountain.", glb_ori: "PartObjaverseTiny_Seventeen_ori.glb", glb_edit: "PartObjaverseTiny_Seventeen_edit.glb", exposure: 1},
+    { video_ori: "RJ_Rabbit_Easter_Basket_Blue_ori.mp4", video_edit: "RJ_Rabbit_Easter_Basket_Blue_edit.mp4", prompt: "Add some vegetables in the basket.", glb_ori: "RJ_Rabbit_Easter_Basket_Blue_ori.glb", glb_edit: "RJ_Rabbit_Easter_Basket_Blue_edit.glb", exposure: 5},
+    { video_ori: "Sonny_School_Bus_ori.mp4", video_edit: "Sonny_School_Bus_edit.mp4", prompt: "Change the driver to a dog.", glb_ori: "Sonny_School_Bus_ori.glb", glb_edit: "Sonny_School_Bus_edit.glb", exposure: 3},
     { video_ori: "telephone_ori.mp4", video_edit: "telephone_edit.mp4", prompt: "Change the telephone receiver to be made of gold.", glb_ori: "telephone_ori.glb", glb_edit: "telephone_edit.glb", exposure: 5},
 ]
 
