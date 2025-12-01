@@ -1,3 +1,22 @@
+
+var items = [
+    { video_ori: "ancientFighter_ori.mp4", video_edit: "ancientFighter_edit.mp4", prompt: "Change the sword to an axe.", glb_ori: "ancientFighter_ori.glb", glb_edit: "ancientFighter_edit.glb", exposure: 5},
+    { video_ori: "BATHROOM_CLASSIC_ori.mp4", video_edit: "BATHROOM_CLASSIC_edit.mp4", prompt: "Change the bathtub to a bucket.", glb_ori: "BATHROOM_CLASSIC_ori.glb", glb_edit: "BATHROOM_CLASSIC_edit.glb", exposure: 5},
+    { video_ori: "CAR_CARRIER_TRAIN_ori.mp4", video_edit: "CAR_CARRIER_TRAIN_edit.mp4", prompt: "Change the toy car to a train.", glb_ori: "CAR_CARRIER_TRAIN_ori.glb", glb_edit: "CAR_CARRIER_TRAIN_edit.glb", exposure: 5},
+    { video_ori: "castle_ori.mp4", video_edit: "castle_edit.mp4", prompt: "Change the tallest castle in the middle to a skyscraper.", glb_ori: "castle_ori.glb", glb_edit: "castle_edit.glb", exposure: 5},
+    { video_ori: "elephant_ori.mp4", video_edit: "elephant_edit.mp4", prompt: "Change the chair to a human riding the elephant.", glb_ori: "elephant_ori.glb", glb_edit: "elephant_edit.glb", exposure: 5},
+    { video_ori: "excavator_ori.mp4", video_edit: "excavator_edit.mp4", prompt: "Change the excavator's bucket to a drill.", glb_ori: "excavator_ori.glb", glb_edit: "excavator_edit.glb", exposure: 5},
+    { video_ori: "foodCartTwo_ori.mp4", video_edit: "foodCartTwo_edit.mp4", prompt: "Add a billboard on the cart.", glb_ori: "foodCartTwo_ori.glb", glb_edit: "foodCartTwo_edit.glb", exposure: 5},
+    { video_ori: "horseCart_ori.mp4", video_edit: "horseCart_edit.mp4", prompt: "Remove the roof of the horse cart.", glb_ori: "horseCart_ori.glb", glb_edit: "horseCart_edit.glb", exposure: 5},
+    { video_ori: "KITCHEN_FURNITURE_SET_ori.mp4", video_edit: "KITCHEN_FURNITURE_SET_edit.mp4", prompt: "Change the kitchen furniture to a kitchen sink.", glb_ori: "KITCHEN_FURNITURE_SET_ori.glb", glb_edit: "KITCHEN_FURNITURE_SET_edit.glb", exposure: 5},
+    { video_ori: "PartObjaverseTiny_Eight_ori.mp4", video_edit: "PartObjaverseTiny_Eight_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "PartObjaverseTiny_Eight_ori.glb", glb_edit: "PartObjaverseTiny_Eight_edit.glb", exposure: 5},
+    { video_ori: "PartObjaverseTiny_Five_ori.mp4", video_edit: "PartObjaverseTiny_Five_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "PartObjaverseTiny_Five_ori.glb", glb_edit: "PartObjaverseTiny_Five_edit.glb", exposure: 5},
+    { video_ori: "PartObjaverseTiny_Seventeen_ori.mp4", video_edit: "PartObjaverseTiny_Seventeen_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "PartObjaverseTiny_Seventeen_ori.glb", glb_edit: "PartObjaverseTiny_Seventeen_edit.glb", exposure: 5},
+    { video_ori: "RJ_Rabbit_Easter_Basket_Blue_ori.mp4", video_edit: "RJ_Rabbit_Easter_Basket_Blue_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "RJ_Rabbit_Easter_Basket_Blue_ori.glb", glb_edit: "RJ_Rabbit_Easter_Basket_Blue_edit.glb", exposure: 5},
+    { video_ori: "Sonny_School_Bus_ori.mp4", video_edit: "Sonny_School_Bus_edit.mp4", prompt: "Change the part to a part of a robot.", glb_ori: "Sonny_School_Bus_ori.glb", glb_edit: "Sonny_School_Bus_edit.glb", exposure: 5},
+    { video_ori: "telephone_ori.mp4", video_edit: "telephone_edit.mp4", prompt: "Change the telephone receiver to be made of gold.", glb_ori: "telephone_ori.glb", glb_edit: "telephone_edit.glb", exposure: 5},
+]
+
 var txt2_items = [
     { video: "telephone.mp4", prompt: "Vintage copper rotary telephone with intricate detailing.", model: "telephone.glb", exposure: 5, source: "GPT-4" },
     { video: "house.mp4", prompt: "Two-story brick house with red roof and fence.", model: "house.glb", exposure: 10, source: "GPT-4" },
@@ -70,14 +89,14 @@ var img2_items = [
     { video: "monster.mp4", prompt: "monster.png", model: "monster.glb", source: "DALL-E 3", alt: "A giant, terrifying monster" },
 ];
 
-function txt2_carousel_item_template(item) {
-    return `<div class="x-card clickable" style="min-width: 120px" onclick=\'openWindow(txt2_window_template(${JSON.stringify(item)}))\'>
+function carousel_item_template(item) {
+    return `<div class="x-card clickable" style="min-width: 120px" onclick=\'openWindow(window_template(${JSON.stringify(item)}))\'>
                 <div style="display: flex; flex-direction: row; gap: 4px; width: 100%;">
                     <div style="flex: 1 1 0; aspect-ratio: 1;">
-                        <video autoplay playsinline loop muted height="100%" style="width: 100%; height: 100%; object-fit: cover;" src="ancientFighter_edit.mp4"></video>
+                        <video autoplay playsinline loop muted height="100%" style="width: 100%; height: 100%; object-fit: cover;" src="assets/videos/${item.video_ori}"></video>
                     </div>
                     <div style="flex: 1 1 0; aspect-ratio: 1;">
-                        <video autoplay playsinline loop muted height="100%" style="width: 100%; height: 100%; object-fit: cover;" src="ancientFighter_edit.mp4"></video>
+                        <video autoplay playsinline loop muted height="100%" style="width: 100%; height: 100%; object-fit: cover;" src="assets/videos/${item.video_edit}"></video>
                     </div>
                 </div>
                 <div class="caption">
@@ -105,13 +124,13 @@ function img2_carousel_item_template(item) {
 }
 
 
-function txt2_window_template(item) {
+function window_template(item) {
     let prompt = `<div class="x-handwriting">${item.prompt}</div>`;
     let panel = asset_panel_template(prompt);
     let item1 = JSON.parse(JSON.stringify(item));
     let item2 = JSON.parse(JSON.stringify(item));
-    item1.model = 'assets/txt2/glbs/' + item1.model;
-    item2.model = 'assets/txt2/glbs/' + item2.model;
+    item1.glb = 'assets/txt2/glbs/' + item1.glb_ori;
+    item2.glb = 'assets/txt2/glbs/' + item2.glb_edit;
     return modelviewer_window_template(item1, item2, panel);
 }
 

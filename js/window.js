@@ -300,7 +300,7 @@ function modelviewer_window_template(item1, item2, panel, config) {
         <div class="modelviewer-container" style="width: ${viewer_size}px;">
             <model-viewer
                 id="modelviewer1"
-                src="${item1.model}"
+                src="${item1.glb}"
                 camera-controls
                 tone-mapping="natural"
                 shadow-intensity="1"
@@ -319,7 +319,7 @@ function modelviewer_window_template(item1, item2, panel, config) {
         <div class="modelviewer-container" style="width: ${viewer_size}px;">
             <model-viewer
                 id="modelviewer2"
-                src="${item2.model}"
+                src="${item2.glb}"
                 camera-controls
                 tone-mapping="natural"
                 shadow-intensity="1"
