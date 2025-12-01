@@ -129,8 +129,8 @@ function window_template(item) {
     let panel = asset_panel_template(prompt);
     let item1 = JSON.parse(JSON.stringify(item));
     let item2 = JSON.parse(JSON.stringify(item));
-    item1.glb = 'assets/glbs/' + item1.glb_ori;
-    item2.glb = 'assets/glbs/' + item2.glb_edit;
+    item1.glb = 'assets/glb/' + item1.glb_ori;
+    item2.glb = 'assets/glb/' + item2.glb_edit;
     return modelviewer_window_template(item1, item2, panel);
 }
 
